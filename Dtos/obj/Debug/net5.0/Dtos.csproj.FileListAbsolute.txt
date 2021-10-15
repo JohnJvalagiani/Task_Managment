@@ -1,0 +1,12 @@
+C:\Users\John\source\repos\Task_Managment_System\Dtos\bin\Debug\net5.0\Dtos.deps.json
+C:\Users\John\source\repos\Task_Managment_System\Dtos\bin\Debug\net5.0\Dtos.dll
+C:\Users\John\source\repos\Task_Managment_System\Dtos\bin\Debug\net5.0\ref\Dtos.dll
+C:\Users\John\source\repos\Task_Managment_System\Dtos\bin\Debug\net5.0\Dtos.pdb
+C:\Users\John\source\repos\Task_Managment_System\Dtos\obj\Debug\net5.0\Dtos.csproj.AssemblyReference.cache
+C:\Users\John\source\repos\Task_Managment_System\Dtos\obj\Debug\net5.0\Dtos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\John\source\repos\Task_Managment_System\Dtos\obj\Debug\net5.0\Dtos.AssemblyInfoInputs.cache
+C:\Users\John\source\repos\Task_Managment_System\Dtos\obj\Debug\net5.0\Dtos.AssemblyInfo.cs
+C:\Users\John\source\repos\Task_Managment_System\Dtos\obj\Debug\net5.0\Dtos.csproj.CoreCompileInputs.cache
+C:\Users\John\source\repos\Task_Managment_System\Dtos\obj\Debug\net5.0\Dtos.dll
+C:\Users\John\source\repos\Task_Managment_System\Dtos\obj\Debug\net5.0\ref\Dtos.dll
+C:\Users\John\source\repos\Task_Managment_System\Dtos\obj\Debug\net5.0\Dtos.pdb
