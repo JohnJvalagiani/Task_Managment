@@ -13,5 +13,6 @@ namespace Domain.Entities
         public string Title { get; set; }
         public string Description { get; set; }
         public string AssignedUser { get; set; }
+        public TaskStatus Status { get; set; }
     }
 }

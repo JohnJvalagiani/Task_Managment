@@ -1,4 +1,5 @@
 ﻿using Application.Services.Abstraction;
+using Application.Services.Implementation;
 using Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -53,7 +54,7 @@ namespace Task_Managment_System.Server.Controllers
             return Ok(result);
 
         }
-
+         
         [HttpGet("Get Task By Id")]
         public async Task<IActionResult> GetTaskById(string taskId)
         {
@@ -62,6 +63,16 @@ namespace Task_Managment_System.Server.Controllers
 
             return Ok(result);
         }
+
+        [HttpGet("Search Task")]
+        public async Task<IActionResult> GetTaskById(DetailedSearchParametrs  detailedSearchParametrs)
+        {
+
+            var result = await _service.Search(detailedSearchParametrs);
+
+            return Ok(result);
+        }
+
 
         [HttpPost("Update Task")]
         public async Task<IActionResult> UpdateTask([FromBody] TaskRead task)

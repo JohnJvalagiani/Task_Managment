@@ -1,4 +1,5 @@
-﻿using Dtos;
+﻿using Application.Services.Implementation;
+using Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace Application.Services.Abstraction
         Task<TaskRead> Update(TaskRead task);
         Task<TaskRead> GetById(string Id);
         Task<IEnumerable<TaskRead>> GetAll();
+        Task<IEnumerable<TaskRead>> Search(DetailedSearchParametrs detailedSearchParametrs);
         Task<bool> Detelete(string Id);
 
     }

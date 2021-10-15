@@ -1,9 +1,11 @@
-﻿using Application.Services.Abstraction;
+﻿using Application.HelperClases;
+using Application.Services.Abstraction;
 using AutoMapper;
 using Core.Services.Abstraction;
 using Domain.Entities;
 using Dtos;
 using Microsoft.AspNetCore.Identity;
+using service.server.HelperClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,6 +73,43 @@ namespace Application.Services.Implementation
         {
 
             return await _repo.Remove(Id);
+
+        }
+
+            public async Task<IEnumerable<TaskRead>> Search(DetailedSearchParametrs detailSearchParametrs)
+            {
+                Func<IQueryable<task>, IOrderedQueryable<task>> orderByFunc = null;
+
+                switch (detailSearchParametrs.OrderPersonsby)
+                {
+                    case taskSearch.assignees:
+                        orderByFunc = q => q.OrderBy(p => p.AssignedUser);
+                        break;
+                    case taskSearch.status:
+                        orderByFunc = q => q.OrderBy(p => p.Status);
+
+                    break;
+
+                    default:
+                        orderByFunc = q => q.OrderBy(p => p.Title);
+                        break;
+
+
+                }
+
+                var predicate = GenericExpressionTree.CreateWhereClause<task>(detailSearchParametrs.SearchPersonsBy.ToString(), detailSearchParametrs.SearchValue);
+
+
+                var persons = await _repo.GetByQueryAsync(predicate, orderByFunc);
+
+
+                var thepersons = persons.Select(p => _mapper.Map<TaskRead>(p));
+
+                var result = PagedList<TaskRead>
+                    .ToPagedList(thepersons.AsQueryable(), detailSearchParametrs.pagingParametrs.PageNumber, detailSearchParametrs.pagingParametrs.PageSize);
+
+                return result;
+
 
         }
     }
